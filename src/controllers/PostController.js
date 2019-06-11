@@ -30,6 +30,9 @@ module.exports = {
            hashtags,
            fileName
        }) 
+
+       req.io.emit('post',post)
+
        fs.unlinkSync(req.file.path)
        return res.json({ post })
     }
